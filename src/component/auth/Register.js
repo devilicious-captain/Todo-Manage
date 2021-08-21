@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { auth } from "../../Firebase";
 import { toast } from "react-toastify";
+import dev from "../../dev.json";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -35,7 +36,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const config = {
-      url: process.env.REACT_APP_REGISTER_REDIRECT_URL,
+      url: dev.REACT_APP_REGISTER_REDIRECT_URL,
       handleCodeInApp: true,
     };
     await auth.sendSignInLinkToEmail(email, config);
