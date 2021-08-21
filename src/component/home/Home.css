@@ -1,0 +1,25 @@
+.home {
+  padding: 0 5%;
+  border: 1px solid #000000;
+}
+.intro {
+  color: azure;
+}
+.stats-card {
+  display: flex;
+  /* overflow-x: scroll; */
+}
+.task-specification {
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: space-around;
+}
+.To-do {
+  flex: 0.3;
+}
+.Doing {
+  flex: 0.3;
+}
+.Done {
+  flex: 0.3;
+}

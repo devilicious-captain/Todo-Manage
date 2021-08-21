@@ -1,0 +1,25 @@
+/* * {
+  background-color: #344fa1;
+} */
+/* .App {
+  padding-left: 30px;
+  
+  text-align: center;
+  background-color: #344fa1;
+  width: 80%;
+  border: 1px solid black;
+  padding: 0 10%;
+} */
+.App {
+  /* background-color: rgba(61, 58, 58, 0.836); */
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(111, 111, 255, 1) 0%,
+    rgba(113, 163, 251, 1) 33%,
+    rgba(96, 170, 252, 0.9475140397956058) 40%,
+    rgba(111, 111, 255, 1) 100%,
+    rgba(83, 83, 255, 1) 100%
+  );
+}

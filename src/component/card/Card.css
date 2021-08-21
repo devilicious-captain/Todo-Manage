@@ -1,0 +1,19 @@
+.card-root {
+  background-color: #031956 !important;
+  color: white !important;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 18px 2px 44px 33px rgba(103, 122, 231, 0.74);
+  /* filter: blur(1px); */
+}
+
+.card-title {
+  font-size: 14px;
+  color: gray !important;
+}
+.MuiPaper-rounded {
+  border-radius: 10px !important;
+  margin: 10px;
+  text-align: center;
+}

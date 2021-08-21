@@ -1,0 +1,47 @@
+.nav {
+  display: flex;
+  height: 65px;
+  align-items: center;
+  /* border: 1px solid black; */
+  background-color: #031956;
+  color: azure;
+}
+.nav-logo {
+  flex: 0.1;
+  padding: 0 20px;
+  font-size: 30px;
+}
+
+.nav-links {
+  flex: 0.3;
+  display: flex;
+  justify-content: flex-end !important;
+  /* border: 1px solid black; */
+}
+.nav-mid {
+  flex: 1;
+}
+.Login {
+  /* border: 1px solid black; */
+  padding: 0 10px;
+  cursor: pointer;
+  flex: 0.3;
+}
+.Signup {
+  /* border: 1px solid black; */
+  padding: 0 10px;
+  cursor: pointer;
+  flex: 0.3;
+}
+.Logout {
+  padding: 0 10px;
+  cursor: pointer;
+  flex: 0.4;
+}
+.Bell {
+  padding: 0 10px;
+  justify-content: center;
+  font-size: 25px;
+  cursor: pointer;
+  flex: 0.2;
+}

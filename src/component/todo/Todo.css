@@ -1,0 +1,86 @@
+/*-------------TODO CSS----------------------*/
+
+.todo {
+  width: 100%;
+  background: transparent !important;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 171, 245, 1) 10%,
+    rgba(90, 140, 252, 1) 50%
+  ) !important;
+  box-shadow: 0px 0px 5px rgb(43, 41, 41) !important;
+}
+
+.heading {
+  color: azure;
+  font-size: 30px;
+  font-family: "Bree Serif";
+  font-weight: 600;
+}
+.underline {
+  border-bottom: 1px solid black;
+}
+.add-on {
+  display: flex;
+  font-size: 32px;
+  padding: 10px;
+}
+.MuiIconButton-label {
+  font-size: 40px;
+}
+.add {
+  cursor: pointer;
+}
+.MuiIconButton-colorPrimary {
+  color: #0425e0 !important;
+}
+/*----------------TASK CSS---------------------*/
+
+.task {
+  padding: 7px;
+  background-color: rgba(255, 255, 255, 0.534) !important;
+  box-shadow: 0px 0px 5px grey;
+  /* opacity: 0.9; */
+  margin-bottom: 30px;
+}
+.task-head {
+  padding: 5px 10px;
+  display: flex;
+  color: darkblue;
+  font-size: larger;
+  font-weight: 600;
+  /* background-color: grey !important; */
+  justify-content: space-between;
+}
+.text {
+  font-size: 16px;
+}
+.Progress {
+  display: flex;
+  /* background-color: rgb(0, 87, 128) !important; */
+  justify-content: space-around;
+  padding: 0px 5px 10px 5px;
+}
+.type {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 20px;
+}
+.To-Do {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 2px 0px;
+  width: 90px;
+}
+.Ongoing {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 2px 0px;
+  width: 90px;
+}
+.Done-task {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 2px 0px;
+  width: 90px;
+}
