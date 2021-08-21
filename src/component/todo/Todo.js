@@ -47,7 +47,7 @@ function Todo(props) {
     } else {
       learn.push(add);
     }
-    setOpen(false);
+    setOpen(true);
   };
   const [open, setOpen] = useState(false);
   const handleClose = () => {
