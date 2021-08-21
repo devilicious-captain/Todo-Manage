@@ -47,8 +47,10 @@ function Todo(props) {
     } else {
       learn.push(add);
     }
-    setOpen(true);
   };
+  const addModal=()=>{
+  setOpen(true);
+  }
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(!open);
@@ -99,7 +101,7 @@ function Todo(props) {
       <div className="add-on">
         {props.type === "Todo" ? (
           <div className="add">
-            <IconButton color="primary" aria-label="add note" onClick={addTask}>
+            <IconButton color="primary" aria-label="add note" onClick={addModal}>
               <HiOutlinePlusCircle />
             </IconButton>
             <Modal
