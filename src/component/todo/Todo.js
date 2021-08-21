@@ -47,6 +47,7 @@ function Todo(props) {
     } else {
       learn.push(add);
     }
+    setOpen(false);
   };
   const addModal=()=>{
   setOpen(true);
