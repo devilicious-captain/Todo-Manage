@@ -8,6 +8,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { auth } from "../../Firebase";
 import { toast } from "react-toastify";
 import dev from "../../dev.json";
+import { useHistory } from "react-router";
+import { FaHome } from "react-icons/fa";
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     display: "flex",
@@ -30,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Register() {
+  let history = useHistory();
   const [email, setEmail] = useState("");
   const classes = useStyles();
   const handleSubmit = async (e) => {
@@ -90,17 +94,23 @@ export default function Register() {
             >
               Register
             </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                {/* <Link
-                  to="/login"
-                  variant="body2"
-                  style={{ color: "#3f51b5", textDecoration: "none" }}
-                >
-                  Already have an account? Sign in
-                </Link> */}
-              </Grid>
-            </Grid>
+            <Button
+              variant="contained"
+              color="primary"
+              className="back-register"
+              style={{
+                // fontSize: "10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "white",
+                backgroundColor: "#031956",
+              }}
+              onClick={(e) => history.push("/")}
+            >
+              <FaHome />{" "}
+              <span style={{ paddingLeft: "10px" }}>Back to Home</span>
+            </Button>
           </form>
         </div>
       </div>

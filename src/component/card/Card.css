@@ -1,19 +1,73 @@
 .card-root {
-  background-color: #031956 !important;
+  background-color: #344979 !important;
+  background-image: linear-gradient(
+    to right,
+    #3c75cb,
+    #356fcf,
+    #3168d2,
+    #3161d5,
+    #3559d7
+  );
   color: white !important;
   display: flex;
   padding: 10px;
   cursor: pointer;
-  box-shadow: 18px 2px 44px 33px rgba(103, 122, 231, 0.74);
+  /* box-shadow: 28px 2px 44px 33px rgba(29, 46, 146, 0.74); */
   /* filter: blur(1px); */
+}
+progress[value]::-webkit-progress-bar {
+  border-radius: 24px;
+  height: 15px;
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #e4e5e9, #e4e5e9) !important;
+}
+progress[value]::-webkit-progress-value {
+  background-color: #eee !important;
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      /* rgba(0, 0, 0, 0.1) 33%, */ rgba(0, 0, 0, 0.1) 66%
+    ),
+    -webkit-linear-gradient(top, rgba(68, 63, 63, 0.527), rgba(73, 68, 68, 0.25)),
+    -webkit-linear-gradient(left, #2238b6, rgb(23, 34, 182)) !important;
 }
 
 .card-title {
   font-size: 14px;
-  color: gray !important;
+  color: rgb(16 28 53) !important;
 }
+
 .MuiPaper-rounded {
   border-radius: 10px !important;
   margin: 10px;
   text-align: center;
+}
+
+@media screen and (max-width: 450px) {
+  .card-title {
+    font-size: 10px !important;
+  }
+  .card-heading {
+    font-size: 2px;
+  }
+  .MuiTypography-h5 {
+    font-size: 15px !important;
+  }
+  .progress {
+    width: 100px;
+    /* height: 5px !important; */
+  }
+  progress[value]::-webkit-progress-bar {
+    height: 10px;
+  }
+  .card-root {
+    padding: 0px;
+    margin: 5px;
+  }
 }

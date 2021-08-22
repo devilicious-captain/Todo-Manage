@@ -41,7 +41,7 @@ function Task(props) {
           <Button
             variant="contained"
             colr="primary"
-            style={{ color: "azure", background: "green" }}
+            style={{ color: "azure", background: "#052a72" }}
             className="Done-task"
             onClick={changeDone}
           >

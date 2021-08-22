@@ -1,17 +1,20 @@
 .home {
   padding: 0 5%;
-  border: 1px solid #000000;
 }
 .intro {
+  font-size: 40px;
   color: azure;
+}
+.select-head {
+  color: aliceblue;
+  font-weight: 400;
+  font-family: "Kaisei Tokumin", serif;
 }
 .stats-card {
   display: flex;
-  /* overflow-x: scroll; */
 }
 .task-specification {
   display: flex;
-  /* border: 1px solid black; */
   justify-content: space-around;
 }
 .To-do {
@@ -22,4 +25,25 @@
 }
 .Done {
   flex: 0.3;
+}
+
+@media screen and (max-width: 450px) {
+  .home {
+    height: 100vh;
+  }
+  .stats-card {
+    overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .intro {
+    font-size: 20px;
+  }
+  .categories {
+    font-size: 15px !important;
+  }
+  .select-head {
+    font-size: 20px;
+  }
 }

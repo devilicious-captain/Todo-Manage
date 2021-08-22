@@ -2,15 +2,16 @@
 
 .todo {
   width: 100%;
-  background: transparent !important;
+  background-color: #134ac2 !important;
   background: linear-gradient(
-    90deg,
-    rgba(26, 171, 245, 1) 10%,
-    rgba(90, 140, 252, 1) 50%
+    45deg,
+    rgb(193, 199, 199) -50%,
+    #134ac2 40%,
+    #3057aa 70%,
+    azure 150%
   ) !important;
-  box-shadow: 0px 0px 5px rgb(43, 41, 41) !important;
+  border-radius: 4px !important;
 }
-
 .heading {
   color: azure;
   font-size: 30px;
@@ -18,7 +19,7 @@
   font-weight: 600;
 }
 .underline {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid rgb(6, 7, 65);
 }
 .add-on {
   display: flex;
@@ -32,15 +33,13 @@
   cursor: pointer;
 }
 .MuiIconButton-colorPrimary {
-  color: #0425e0 !important;
+  color: rgb(6, 7, 65) !important;
 }
 /*----------------TASK CSS---------------------*/
 
 .task {
   padding: 7px;
   background-color: rgba(255, 255, 255, 0.534) !important;
-  box-shadow: 0px 0px 5px grey;
-  /* opacity: 0.9; */
   margin-bottom: 30px;
 }
 .task-head {
@@ -62,25 +61,67 @@
   padding: 0px 5px 10px 5px;
 }
 .type {
-  border: 1px solid black;
   padding: 5px;
   border-radius: 20px;
 }
 .To-Do {
-  border: 1px solid black;
-  border-radius: 20px;
   padding: 2px 0px;
   width: 90px;
 }
 .Ongoing {
-  border: 1px solid black;
-  border-radius: 20px;
   padding: 2px 0px;
   width: 90px;
 }
 .Done-task {
-  border: 1px solid black;
-  border-radius: 20px;
   padding: 2px 0px;
   width: 90px;
+}
+
+@media screen and (max-width: 450px) {
+  .heading {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .MuiCardContent-root {
+    padding: 5px !important;
+  }
+  .task {
+    padding: 2px;
+  }
+  .task-head {
+    padding: 2px 5px;
+    font-weight: 400;
+  }
+  .text {
+    font-size: 10px;
+  }
+  .date {
+    font-size: 10px;
+  }
+  .add-on {
+    font-size: 5px !important;
+    padding: 0px;
+  }
+  .Progress {
+    padding: 0px 1px 2px 1px;
+  }
+  .MuiIconButton-label {
+    font-size: 15px;
+  }
+  .MuiButton-label {
+    font-size: 7px;
+  }
+  .Ongoing {
+    width: 40px;
+  }
+  .Done-task {
+    width: 40px;
+  }
+  .type {
+    padding: 2px;
+  }
+  .underline {
+    padding: 1px 0px 0px 0px;
+    border-bottom: 1px solid rgb(6, 7, 65);
+  }
 }

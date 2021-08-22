@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import "./Todo.css";
-import { HiOutlinePlusCircle } from "react-icons/hi";
+import { FaPlusCircle } from "react-icons/fa";
 import Task from "../task/Task";
 import items from "../task-jsx/Business";
 import per from "../task-jsx/Personal";
@@ -34,9 +34,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Todo(props) {
-  // const [changeCard, setChangeCard] = useState({});
-  // console.log("changeCard", changeCard);
-  // useEffect(() => {}, [changeCard]);
   const classes = useStyles();
   const addTask = () => {
     console.log("Addition of task");
@@ -48,6 +45,9 @@ function Todo(props) {
       learn.push(add);
     }
     setOpen(false);
+  };
+  const addModal = () => {
+    setOpen(true);
   };
   const [open, setOpen] = useState(false);
   const handleClose = () => {
@@ -69,7 +69,6 @@ function Todo(props) {
                 <Task
                   type={props.type}
                   item={item}
-                  // selectedCard={(card) => setChangeCard(card)}
                   tempCallback={() => props.tempCallback()}
                 />
               ) : null;
@@ -99,8 +98,12 @@ function Todo(props) {
       <div className="add-on">
         {props.type === "Todo" ? (
           <div className="add">
-            <IconButton color="primary" aria-label="add note" onClick={addTask}>
-              <HiOutlinePlusCircle />
+            <IconButton
+              color="primary"
+              aria-label="add note"
+              onClick={addModal}
+            >
+              <FaPlusCircle />
             </IconButton>
             <Modal
               aria-labelledby="transition-modal-title"

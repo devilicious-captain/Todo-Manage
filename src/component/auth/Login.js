@@ -7,28 +7,29 @@ import { auth } from "../../Firebase";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
+import { FaHome } from "react-icons/fa";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   paper: {
-    // marginTop: theme.spacing(8),
     display: "flex",
     alignItems: "center",
     // height: "100vh",
+    justifyContent: "center",
     padding: "70px 10px",
     flexDirection: "column",
     backgroundColor: "white",
     // border: "1px solid black",
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
+
   form: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    textAlign: "center",
     width: "400px", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: "20px",
   },
 }));
 
@@ -45,6 +46,7 @@ export default function SignIn() {
     try {
       const result = await auth.signInWithEmailAndPassword(email, password);
       const { user } = result;
+      console.log("User:", user.email);
       const idTokenResult = await user.getIdTokenResult();
       console.log("id: ", idTokenResult, user);
       dispatch({
@@ -54,6 +56,7 @@ export default function SignIn() {
           token: idTokenResult.token,
         },
       });
+      toast.dark(`Welcome ${user.email}`);
       history.push("/");
     } catch (error) {
       toast.error(error.message);
@@ -62,7 +65,7 @@ export default function SignIn() {
   };
 
   return (
-    <div>
+    <div className="login-page">
       <div className={classes.paper}>
         {/* <img
             src={Med}
@@ -74,16 +77,15 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
+        <form className={classes.form} onSubmit={handleSubmit} id="login-form">
           <TextField
             variant="outlined"
             margin="normal"
             required
-            fullWidth
-            id="email"
             label="Email Address"
             name="email"
             type="email"
+            className="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             autoComplete="email"
@@ -92,7 +94,6 @@ export default function SignIn() {
           <TextField
             variant="outlined"
             required
-            fullWidth
             name="password"
             label="Password"
             type="password"
@@ -103,13 +104,29 @@ export default function SignIn() {
           />
           <Button
             type="submit"
-            fullWidth
             variant="contained"
             color="primary"
+            size="200"
             className={classes.submit}
             disabled={!email || password.length < 8}
           >
             Login
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className="back"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "white",
+              width: "200px",
+              backgroundColor: "#031956",
+            }}
+            onClick={(e) => history.push("/")}
+          >
+            <FaHome /> <span style={{ paddingLeft: "10px" }}>Back to Home</span>
           </Button>
         </form>
       </div>

@@ -10,12 +10,13 @@ function Home() {
   return (
     <div className="home">
       <h1 className="intro">
-        What's up, <span style={{ color: "#0f2467" }}>Buddy</span>
+        What's up, <span style={{ color: "#5089C6" }}>Buddy</span>
       </h1>
       <span
+        className="categories"
         style={{
-          fontSize: "18px",
-          color: "#0f2467",
+          fontSize: "25px",
+          color: "#EEEEEE",
           fontWeight: "600",
           padding: "15px",
         }}
@@ -25,21 +26,21 @@ function Home() {
       <div className="stats-card">
         <div className="Business-card">
           <Card
-            number="40"
+            number="4"
             heading="Business"
             selectedCard={(card) => setSelected(card)}
           />
         </div>
         <div className="Personal-card">
           <Card
-            number="30"
+            number="4"
             heading="Personal"
             selectedCard={(card) => setSelected(card)}
           />
         </div>
         <div className="Learning-card">
           <Card
-            number="20"
+            number="4"
             heading="Learning"
             selectedCard={(card) => setSelected(card)}
           />

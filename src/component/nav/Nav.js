@@ -2,11 +2,13 @@ import React from "react";
 import { auth } from "../../Firebase";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { FaBell } from "react-icons/fa";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { FcTodoList } from "react-icons/fc";
+import { BiUser, BiUserPlus } from "react-icons/bi";
+import { HiLogout } from "react-icons/hi";
+import { toast } from "react-toastify";
 
 function Nav() {
   let dispatch = useDispatch();
@@ -17,7 +19,8 @@ function Nav() {
       type: "LOGOUT",
       payload: [],
     });
-    history.push("/login");
+    toast.dark("Logout Successfully!");
+    history.push("/");
   };
   const { user } = useSelector((state) => state);
   console.log("users : ", user);
@@ -29,24 +32,21 @@ function Nav() {
       </div>
       <div className="nav-mid" />
       <div className="nav-links">
-        {/* {console.log("user-token", user.user.token)} */}
         {user.user.token ? (
           <>
-            <div className="Bell">
-              <FaBell />
-            </div>{" "}
             <div className="Logout" onClick={logout}>
-              Logout
+              <HiLogout size="25px" /> Logout
             </div>
           </>
         ) : (
           <>
             {" "}
-            <Link to="/login">
-              <div
-                className="Login"
-                style={{ color: "white", textDecoration: "none" }}
-              >
+            <Link
+              to="/login"
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              <div className="Login">
+                <BiUser size="30px" />
                 Login
               </div>
             </Link>
@@ -54,7 +54,10 @@ function Nav() {
               to="/register"
               style={{ color: "white", textDecoration: "none" }}
             >
-              <div className="Signup">Signup</div>
+              <div className="Signup">
+                <BiUserPlus size="30px" />
+                Register
+              </div>
             </Link>
           </>
         )}

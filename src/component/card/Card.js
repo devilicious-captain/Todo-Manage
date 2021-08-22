@@ -22,10 +22,19 @@ export default function OutlinedCard(props) {
         <Typography className="card-title" color="textSecondary" gutterBottom>
           {props.number} Tasks
         </Typography>
-        <Typography variant="h5" component="h2">
+        <Typography variant="h5" component="h2" className="card-heading">
           {props.heading}
         </Typography>
-        <progress value={60} max={100} min={0} />
+        <div className="progress">
+          <progress
+            value={60}
+            max={100}
+            min={0}
+            strokeWidth={10}
+            className="progress"
+            style={{ height: "15px", backgroundColor: "#3263d5" }}
+          />
+        </div>
       </CardContent>
     </Card>
   );
